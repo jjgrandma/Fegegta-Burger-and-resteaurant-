@@ -19,7 +19,7 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: 1,
-    title: 'THE STORY BEHIND FEGEGTA BURGER IN ADAMA',
+    title: 'THE STORY BEHIND YO Burger IN ADAMA',
     excerpt: "Dummy text of the printing and types editing industry lorem ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     content: "Full article content here... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     date: 'March 21, 2023',
@@ -55,7 +55,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    title: 'BEHIND THE SCENES: A DAY AT FEGEGTA KITCHEN',
+    title: 'BEHIND THE SCENES: A DAY AT YO Kitchen',
     excerpt: 'Take a peek behind the curtain and see how our talented team prepares for a busy dinner service. From prep to plating, every detail matters.',
     date: 'March 5, 2023',
     author: 'Marco Rossi',
@@ -63,7 +63,7 @@ const blogPosts: BlogPost[] = [
     authorRole: 'Sous Chef',
     image: 'https://images.unsplash.com/photo-1556911073-a525e7100f18?w=800&q=80',
     category: 'Family Food',
-    content: 'Full article content here. Experience a day in the life at Fegegta Kitchen.',
+    content: 'Full article content here. Experience a day in the life at YO Kitchen.',
   },
   {
     id: 5,

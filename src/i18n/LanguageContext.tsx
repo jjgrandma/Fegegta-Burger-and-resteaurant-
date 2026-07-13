@@ -4,7 +4,7 @@ export type Language = 'en' | 'am' | 'om';
 
 const translations: Record<Language, Record<string, string>> = {
   en: {
-    'brand.name': 'FEGEGTA BURGER',
+    'brand.name': 'YO Burger',
     'brand.location': 'ADAMA, ETHIOPIA',
     'nav.home': 'HOME',
     'nav.menus': 'MENUS',
@@ -27,7 +27,7 @@ const translations: Record<Language, Record<string, string>> = {
     'category.lunch': 'LUNCH',
     'category.dinner': 'DINNER',
     'category.drinks': 'DRINKS',
-    'hero.welcome': 'Welcome to Fegegta Burger',
+    'hero.welcome': 'Welcome to YO Burger',
     'hero.premium': 'Adama\'s Favorite Bite',
     'hero.crafted': 'Freshly Made Every Day',
     'hero.title1': 'BURGER & GRILL',
@@ -57,7 +57,7 @@ const translations: Record<Language, Record<string, string>> = {
     'home.reviewsTitle': 'WHAT ADAMA SAYS ABOUT US',
     'home.ourStory': 'Our Story',
     'home.storyTitle': 'LOCAL INGREDIENTS, BIG FLAVOUR, AND A WARM ADAMA WELCOME.',
-    'home.storyText': 'Fegegta Burger was created in Adama to bring people together over fresh burgers, grilled favorites, and friendly service. Every order is prepared with care using quality local ingredients.',
+    'home.storyText': 'YO Burger was created in Adama to bring people together over fresh burgers, grilled favorites, and friendly service. Every order is prepared with care using quality local ingredients.',
     'home.years': 'Years Experience',
     'home.menuItems': 'Menu Items',
     'home.happyGuests': 'Happy Guests',
@@ -123,7 +123,7 @@ const translations: Record<Language, Record<string, string>> = {
     'about.kicker': 'About Us',
     'about.title': 'OUR STORY',
     'about.rareTaste': 'A LOCAL RESTAURANT BUILT AROUND FRESH FOOD AND BIG FLAVOUR',
-    'about.p1': 'Founded in Adama, Fegegta Burger began with one simple goal: make a great burger and serve every guest with a smile.',
+    'about.p1': 'Founded in Adama, YO Burger began with one simple goal: make a great burger and serve every guest with a smile.',
     'about.p2': 'Our commitment to quality ingredients, bold recipes, and friendly service has made Fegegta a welcoming place for families, friends, and visitors.',
     'about.mission': 'Our Mission',
     'about.missionText': 'To serve fresh, satisfying food with warm Ethiopian hospitality and consistent quality in every order.',
@@ -159,7 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
     'common.adamaAddress': 'G7WC+GJG, Adama, Oromia, Ethiopia',
   },
   am: {
-    'brand.name': 'ፈገግታ በርገር',
+    'brand.name': 'YO በርገር',
     'brand.location': 'አዳማ፣ ኢትዮጵያ',
     'nav.home': 'መነሻ', 'nav.menus': 'ምናሌ', 'nav.about': 'ስለ እኛ', 'nav.chefs': 'ሼፎቻችን', 'nav.blog': 'ብሎግ', 'nav.pages': 'ገጾች', 'nav.contact': 'ያግኙን',
     'nav.latest': 'አዳዲስ ጽሑፎች', 'nav.blogDetails': 'የብሎግ ዝርዝር', 'nav.reservation': 'ቦታ ማስያዝ', 'nav.reviews': 'አስተያየቶች', 'nav.findTable': 'ጠረጴዛ ያስይዙ', 'nav.toggle': 'ምናሌ ክፈት',
@@ -186,13 +186,13 @@ const translations: Record<Language, Record<string, string>> = {
     'common.adamaAddress': 'G7WC+GJG, አዳማ፣ ኦሮሚያ፣ ኢትዮጵያ',
   },
   om: {
-    'brand.name': 'FEGEGTA BURGER', 'brand.location': 'ADAAMAA, ITOOPHIYAA',
+    'brand.name': 'YO Burger', 'brand.location': 'ADAAMAA, ITOOPHIYAA',
     'nav.home': 'FUULA DURAA', 'nav.menus': 'NYAATA', 'nav.about': 'WAA\'EE KEENYA', 'nav.chefs': 'BILCHEESSITOOTA', 'nav.blog': 'ODUU', 'nav.pages': 'FUULOTA', 'nav.contact': 'NU QUNNAMAA', 'nav.latest': 'BARREEFFAMOOTA HAARAA', 'nav.blogDetails': 'BAL\'INA ODUU', 'nav.reservation': 'BAKKA QABADHAA', 'nav.reviews': 'YAADA MAAMILTOOTAA', 'nav.findTable': 'MINJAALA QABADHAA', 'nav.toggle': 'Baafata bani',
     'category.starters': 'NYAATA JALQABAA', 'category.burgers': 'BURGERII', 'category.special': 'ADDAA', 'category.desserts': 'MI\'AAWAA', 'category.breakfast': 'CIREE', 'category.lunch': 'LAQANA', 'category.dinner': 'IRBAATA', 'category.drinks': 'DHUGAATII',
-    'hero.welcome': 'Baga gara Fegegta Burger dhuftan', 'hero.premium': 'Mi\'a Jaallatamaa Adaamaa', 'hero.crafted': 'Guyyaa Guyyaan Haaraa Qophaa\'a', 'hero.title1': 'BURGERII FI GRILL', 'hero.highlight1': 'MANA NYAATAA', 'hero.title2': 'MI\'A ITOOPHIYAA', 'hero.highlight2': 'JABAA', 'hero.title3': 'HAARAA. HO\'AA.', 'hero.highlight3': 'HIN IRRAANFATAMU.',
+    'hero.welcome': 'Baga gara YO Burger dhuftan', 'hero.premium': 'Mi\'a Jaallatamaa Adaamaa', 'hero.crafted': 'Guyyaa Guyyaan Haaraa Qophaa\'a', 'hero.title1': 'BURGERII FI GRILL', 'hero.highlight1': 'MANA NYAATAA', 'hero.title2': 'MI\'A ITOOPHIYAA', 'hero.highlight2': 'JABAA', 'hero.title3': 'HAARAA. HO\'AA.', 'hero.highlight3': 'HIN IRRAANFATAMU.',
     'hero.desc1': 'Burgerii mi\'aawaa, nyaata ibiddaan bilcheeffame fi keessummeessummaa ho\'aa Itoophiyaa magaalaa Adaamaa keessatti.', 'hero.desc2': 'Wantoonni naannoo fi mi\'oonni jajjaboon ciniinnaa hunda keessatti walitti dhufu.', 'hero.desc3': 'Garee bilcheessitoota keenyaatiin guyyaa guyyaan ajaja keessaniif qophaa\'a.', 'hero.viewMenu': 'NYAATA KEENYA HUNDA ILAALAA', 'hero.book': 'MINJAALA QABADHAA',
     'home.ourMenu': 'Nyaata Keenya', 'home.menuTitle': 'MI\'A HAARAA ADAAMAA KEESSATTI QOPHAA\'U', 'home.startDay': 'Guyyaa keessan gaariidhaan jalqabaa', 'home.midday': 'Nyaata laqanaa jaallatamaa', 'home.evening': 'Nyaata galgalaa', 'home.refreshing': 'Dhugaatii qabbanaa\'aa', 'home.items': 'Filannoowwan',
-    'home.ourChef': 'Garee Bilcheessitootaa', 'home.chefsTitle': 'BILCHEESSITOOTA KEENYA BEEKAA', 'home.experience': 'Muuxannoo', 'home.specialty': 'Dandeettii Addaa', 'home.meetTeam': 'GAREE KEENYA BEEKAA', 'home.customerReviews': 'Yaada Maamiltootaa', 'home.reviewsTitle': 'ADAAMAAN WAA\'EE KEENYA MAAL JETTI', 'home.ourStory': 'Seenaa Keenya', 'home.storyTitle': 'WANTOOTA NAANNOO, MI\'A GUDDAA FI SIMANNAA HO\'AA ADAAMAA.', 'home.storyText': 'Fegegta Burger namoota burgerii haaraa, nyaata grill fi tajaajila michuu ta\'een walitti fiduuf Adaamaa keessatti hundaa\'e.', 'home.years': 'Waggaa Muuxannoo', 'home.menuItems': 'Filannoo Nyaataa', 'home.happyGuests': 'Keessummoota Gammadoo', 'home.gallery': 'Galarii Keenya', 'home.galleryTitle': 'MI\'A FEGEGTA',
+    'home.ourChef': 'Garee Bilcheessitootaa', 'home.chefsTitle': 'BILCHEESSITOOTA KEENYA BEEKAA', 'home.experience': 'Muuxannoo', 'home.specialty': 'Dandeettii Addaa', 'home.meetTeam': 'GAREE KEENYA BEEKAA', 'home.customerReviews': 'Yaada Maamiltootaa', 'home.reviewsTitle': 'ADAAMAAN WAA\'EE KEENYA MAAL JETTI', 'home.ourStory': 'Seenaa Keenya', 'home.storyTitle': 'WANTOOTA NAANNOO, MI\'A GUDDAA FI SIMANNAA HO\'AA ADAAMAA.', 'home.storyText': 'YO Burger namoota burgerii haaraa, nyaata grill fi tajaajila michuu ta\'een walitti fiduuf Adaamaa keessatti hundaa\'e.', 'home.years': 'Waggaa Muuxannoo', 'home.menuItems': 'Filannoo Nyaataa', 'home.happyGuests': 'Keessummoota Gammadoo', 'home.gallery': 'Galarii Keenya', 'home.galleryTitle': 'MI\'A FEGEGTA',
     'footer.description': 'Burgerii haaraa, mi\'a jabaa fi yeroo hin irraanfatamne Adaamaa, Itoophiyaa keessatti.', 'footer.quickLinks': 'Geessituu Ariifataa', 'footer.ourMenu': 'Nyaata Keenya', 'footer.gallery': 'Galarii', 'footer.phone': 'Bilbila', 'footer.email': 'Imeelii', 'footer.address': 'Teessoo', 'footer.contact': 'Nu Qunnamaa', 'footer.hours': 'Sa\'aatii Banamaa', 'footer.lunch': 'Laqana', 'footer.dinner': 'Irbaata', 'footer.everyday': 'Guyyaa hunda', 'footer.follow': 'Nu Hordofaa', 'footer.rights': 'Mirgi hundi eegamaa dha.',
     'menu.browse': 'Ilaalaa', 'menu.title': 'NYAATA KEENYA', 'menu.search': 'Nyaata barbaadaa...', 'menu.sortName': 'Maqaadhaan tarreessi', 'menu.sortLow': 'Gatii: xiqqaadhaa gara guddaatti', 'menu.sortHigh': 'Gatii: guddaadhaa gara xiqqaatti', 'menu.noItems': 'Nyaanni hin argamne', 'menu.add': 'Ajaja Keessatti Dabali', 'menu.new': 'HAARAA',
     'reservation.kicker': 'Bakka Qabadhaa', 'reservation.title': 'Minjaala Qabachuu', 'reservation.success': 'Minjaalli keessan milkaa\'inaan qabameera. Mirkaneessuuf isin qunnamna.',
@@ -200,7 +200,7 @@ const translations: Record<Language, Record<string, string>> = {
     'form.requiredName': 'Maqaan barbaachisaa dha', 'form.shortName': 'Maqaan qubee 2 ol qabaachuu qaba', 'form.requiredPhone': 'Lakkoofsi bilbilaa barbaachisaa dha', 'form.invalidPhone': 'Lakkoofsa bilbilaa sirrii galchaa', 'form.requiredDate': 'Guyyaan barbaachisaa dha', 'form.pastDate': 'Guyyaa darbe filachuun hin danda\'amu', 'form.requiredTime': 'Sa\'aatiin barbaachisaa dha',
     'reservation.request': 'Gaaffii Bakka Qabachuu', 'reservation.location': 'Bakka', 'reservation.lunch': 'Sa\'aatii Laqanaa', 'reservation.dinner': 'Sa\'aatii Irbaataa',
     'contact.kicker': 'Nu Qunnamaa', 'contact.title': 'NU QUNNAMAA', 'contact.call': 'Nuuf Bilbilaa', 'contact.email': 'Imeelii Nuuf Ergaa', 'contact.find': 'Nu Argadhaa', 'contact.sayHi': 'Nagaa Nu Jedhaa,', 'contact.dontBeShy': 'Isin Irraa Dhaga\'uu Barbaanna', 'contact.thanks': 'Ergaa keessaniif galatoomaa. Dhiheenyatti isin qunnamna.',
-    'about.kicker': 'Waa\'ee Keenya', 'about.title': 'SEENAA KEENYA', 'about.rareTaste': 'MANA NYAATAA NAANNOO NYAATA HAARAA FI MI\'A GUDDAA IRRATTI IJAARAME', 'about.p1': 'Fegegta Burger Adaamaa keessatti kaayyoo salphaa tokkoon hundaa\'e: burgerii gaarii qopheessuu fi keessummaa hunda seeqaan tajaajiluu.', 'about.p2': 'Wantoota qulqulluu, qophii mi\'aawaa fi tajaajila michuu ta\'eef kutannoon keenya Fegegta bakka maatii fi hiriyoonni itti wal argan taasiseera.', 'about.mission': 'Ergama Keenya', 'about.missionText': 'Nyaata haaraa fi quubsaa keessummeessummaa ho\'aa Itoophiyaatiin, qulqullina wal irraa hin cinneen dhiyeessuu.', 'about.vision': 'Mul\'ata Keenya', 'about.visionText': 'Bakka burgerii jaallatamaa Adaamaa fi maqaa mana nyaataa Itoophiyaa amanamaa ta\'uu.', 'about.team': 'Garee Keenya', 'about.teamTitle': 'GAREE DANDEETTII KEENYA BEEKAA', 'about.galleryTitle': 'GALERII MANA NYAATAA KEENYA',
+    'about.kicker': 'Waa\'ee Keenya', 'about.title': 'SEENAA KEENYA', 'about.rareTaste': 'MANA NYAATAA NAANNOO NYAATA HAARAA FI MI\'A GUDDAA IRRATTI IJAARAME', 'about.p1': 'YO Burger Adaamaa keessatti kaayyoo salphaa tokkoon hundaa\'e: burgerii gaarii qopheessuu fi keessummaa hunda seeqaan tajaajiluu.', 'about.p2': 'Wantoota qulqulluu, qophii mi\'aawaa fi tajaajila michuu ta\'eef kutannoon keenya Fegegta bakka maatii fi hiriyoonni itti wal argan taasiseera.', 'about.mission': 'Ergama Keenya', 'about.missionText': 'Nyaata haaraa fi quubsaa keessummeessummaa ho\'aa Itoophiyaatiin, qulqullina wal irraa hin cinneen dhiyeessuu.', 'about.vision': 'Mul\'ata Keenya', 'about.visionText': 'Bakka burgerii jaallatamaa Adaamaa fi maqaa mana nyaataa Itoophiyaa amanamaa ta\'uu.', 'about.team': 'Garee Keenya', 'about.teamTitle': 'GAREE DANDEETTII KEENYA BEEKAA', 'about.galleryTitle': 'GALERII MANA NYAATAA KEENYA',
     'chefs.kicker': 'Garee Keenya', 'chefs.title': 'BILCHEESSITOOTA KEENYA', 'chefs.view': 'Odeeffannoo Ilaali', 'chefs.awards': 'Badhaasa fi Beekamtii', 'chefs.follow': 'Hordofaa',
     'blog.kicker': 'Seenaa Keenya', 'blog.title': 'BARREEFFAMOOTA HAARAA', 'blog.all': 'Hunda', 'blog.read': 'DABALATA DUBBISAA', 'blog.search': 'Barreeffama Barbaadaa', 'blog.recent': 'Barreeffamoota Haaraa', 'blog.categories': 'Ramaddiiwwan', 'blog.noPosts': 'Barreeffamni hin argamne', 'blog.detailKicker': 'Bal\'ina Oduu', 'blog.detailTitle': 'BAL\'INA ODUU', 'blog.share': 'Qoodaa', 'blog.back': 'GARA ODUUTTI DEEBI\'AA',
     'reviews.kicker': 'Ragaa Maamiltootaa', 'reviews.title': 'YAADA MAAMILTOOTAA', 'reviews.total': 'Yaada Waliigalaa', 'reviews.average': 'Sadarkaa Giddugaleessaa', 'reviews.fiveStar': 'Yaada Urjii 5', 'reviews.recommend': 'Ni Gorsu', 'reviews.helpful': 'Gargaaraa',
@@ -218,12 +218,12 @@ const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('fegegta-language');
+    const saved = localStorage.getItem('yo-burger-language');
     return saved === 'am' || saved === 'om' ? saved : 'en';
   });
 
   useEffect(() => {
-    localStorage.setItem('fegegta-language', language);
+    localStorage.setItem('yo-burger-language', language);
     document.documentElement.lang = language;
     document.title = `${translations[language]['brand.name']} | ${translations[language]['brand.location']}`;
   }, [language]);

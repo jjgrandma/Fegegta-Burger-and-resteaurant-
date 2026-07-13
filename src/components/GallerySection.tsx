@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const galleryImages = [
-  { src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=85', alt: 'Fegegta Classic Burger' },
+  { src: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=85', alt: 'YO CLASSIC BURGER' },
   { src: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=85', alt: 'Mixed Grill Platter' },
   { src: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=800&q=85', alt: 'Grilled Chicken' },
   { src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=85', alt: 'Gourmet Dish' },

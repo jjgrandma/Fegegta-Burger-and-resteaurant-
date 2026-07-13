@@ -5,7 +5,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 const blogPosts = [
   {
     id: 1,
-    title: 'THE STORY BEHIND FEGEGTA BURGER IN ADAMA',
+    title: 'THE STORY BEHIND YO Burger IN ADAMA',
     excerpt: "Dummy text of the printing and types editing industry lorem ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
@@ -13,7 +13,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
 
-At Fegegta Burger, we pride ourselves on delivering a warm dining experience in Adama. Our commitment to quality ingredients, careful preparation, and friendly service creates memories that last.
+At YO Burger, we pride ourselves on delivering a warm dining experience in Adama. Our commitment to quality ingredients, careful preparation, and friendly service creates memories that last.
 
 Whether you're celebrating a special occasion or simply enjoying a night out, our team ensures every detail is perfect. From the moment you step through our doors, you're welcomed into a world of culinary excellence.`,
     date: 'March 21, 2023',
@@ -28,7 +28,7 @@ Whether you're celebrating a special occasion or simply enjoying a night out, ou
 const recentPosts = [
   { id: 2, title: 'OUR SECRETS TO BUILDING THE PERFECT BURGER', date: 'March 15, 2023', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200&q=80' },
   { id: 3, title: 'THE ULTIMATE GUIDE TO WINE PAIRING FOR STEAK', date: 'March 10, 2023', image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=200&q=80' },
-  { id: 4, title: 'BEHIND THE SCENES: A DAY AT FEGEGTA KITCHEN', date: 'March 5, 2023', image: 'https://images.unsplash.com/photo-1556911073-a525e7100f18?w=200&q=80' },
+  { id: 4, title: 'BEHIND THE SCENES: A DAY AT YO Kitchen', date: 'March 5, 2023', image: 'https://images.unsplash.com/photo-1556911073-a525e7100f18?w=200&q=80' },
 ];
 
 export default function BlogDetailPage() {

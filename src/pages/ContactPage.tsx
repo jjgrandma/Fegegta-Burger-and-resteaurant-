@@ -82,8 +82,8 @@ export default function ContactPage() {
                   </div>
                   <h3 className="text-white font-bold text-base md:text-lg uppercase tracking-wider">{t('contact.email')}</h3>
                 </div>
-                <a href="mailto:hello@fegegtaburger.et" className="text-red-500 hover:text-red-400 font-bold text-base md:text-lg transition-colors ml-16">
-                  hello@fegegtaburger.et
+                <a href="mailto:hello@yoburger.et" className="text-red-500 hover:text-red-400 font-bold text-base md:text-lg transition-colors ml-16">
+                  hello@yoburger.et
                 </a>
               </div>
 

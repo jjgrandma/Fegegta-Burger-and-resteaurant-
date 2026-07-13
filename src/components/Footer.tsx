@@ -65,8 +65,8 @@ export default function Footer() {
               </div>
               <div>
                 <p className="text-gray-500 text-xs uppercase tracking-wider mb-1">{t('footer.email')}</p>
-                <a href="mailto:hello@fegegtaburger.et" className="text-gray-300 hover:text-red-500 text-sm transition-colors block">
-                  hello@fegegtaburger.et
+                <a href="mailto:hello@yoburger.et" className="text-gray-300 hover:text-red-500 text-sm transition-colors block">
+                  hello@yoburger.et
                 </a>
               </div>
               <div>
