@@ -1,42 +1,59 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import LanguageSwitcher from './LanguageSwitcher';
-import { useLanguage } from '../i18n/LanguageContext';
+import { useLanguage, type Language } from '../i18n/LanguageContext';
+
+const langOptions: { value: Language; label: string }[] = [
+  { value: 'am', label: 'አማ' },
+  { value: 'om', label: 'OR' },
+  { value: 'en', label: 'EN' },
+];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  // separate dropdown state for desktop and mobile
+  const [desktopDropdown, setDesktopDropdown] = useState<string | null>(null);
+  const [mobileDropdown, setMobileDropdown] = useState<string | null>(null);
+
   const location = useLocation();
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  const { t } = useLanguage();
+  const desktopRef = useRef<HTMLDivElement>(null);
+  const mobileRef = useRef<HTMLDivElement>(null);
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // close everything on route change
   useEffect(() => {
     setIsMobileOpen(false);
-    setOpenDropdown(null);
+    setDesktopDropdown(null);
+    setMobileDropdown(null);
   }, [location]);
 
+  // close desktop dropdown on outside click
   useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setOpenDropdown(null);
+    const handleClick = (e: MouseEvent) => {
+      if (desktopRef.current && !desktopRef.current.contains(e.target as Node)) {
+        setDesktopDropdown(null);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
   }, []);
 
-  const toggleDropdown = (name: string) => {
-    setOpenDropdown(openDropdown === name ? null : name);
-  };
+  // close mobile dropdown on outside click
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (mobileRef.current && !mobileRef.current.contains(e.target as Node)) {
+        setMobileDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
 
   const navLinks = [
     { name: t('nav.home'), path: '/' },
@@ -60,15 +77,6 @@ export default function Navbar() {
         { name: t('nav.blogDetails'), path: '/blog/1' },
       ],
     },
-    {
-      name: t('nav.pages'),
-      path: '#',
-      dropdown: [
-        { name: t('nav.reservation'), path: '/reservation' },
-        { name: t('nav.contact'), path: '/contact' },
-        { name: t('nav.reviews'), path: '/reviews' },
-      ],
-    },
     { name: t('nav.contact'), path: '/contact' },
   ];
 
@@ -85,168 +93,243 @@ export default function Navbar() {
           : 'bg-gray-950 border-b border-gray-800/50'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0 group">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 md:w-10 md:h-10 text-red-500 text-xl md:text-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="w-6 h-6 md:w-8 md:h-8">
-                  <path strokeLinecap="round" d="M5 9.5h14M4.5 15h15M6 18h12a2 2 0 0 0 2-2v-1H4v1a2 2 0 0 0 2 2ZM5 9.5C5 6.5 8 4 12 4s7 2.5 7 5.5H5Z" />
-                  <path strokeLinecap="round" d="M7 12h10" />
+      {/* ── DESKTOP / TABLET (md+) ── */}
+      <div className="hidden md:block">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
+          <div className="flex items-center h-[62px] gap-3">
+
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0 group flex items-center gap-2.5">
+              <div className="w-9 h-9 bg-red-600 rounded-lg flex items-center justify-center shadow-md shadow-red-600/40 group-hover:bg-red-700 transition-colors">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" className="w-5 h-5">
+                  <path d="M5 9.5C5 6.5 8 4 12 4s7 2.5 7 5.5H5Z" />
+                  <path d="M5 9.5h14" />
+                  <path d="M7 12h10" />
+                  <path d="M4.5 15h15" />
+                  <path d="M6 18h12a2 2 0 0 0 2-2v-1H4v1a2 2 0 0 0 2 2Z" />
                 </svg>
               </div>
-              <div>
-                <h1 className="text-white font-bold text-base md:text-xl tracking-wide">{t('brand.name')}</h1>
-                <p className="text-red-500 text-[9px] md:text-[10px] font-semibold tracking-[0.16em]">{t('brand.location')}</p>
+              <div className="leading-none">
+                <div className="text-white font-bold italic text-lg md:text-xl tracking-wide lowercase">{t('brand.name')}</div>
+                <div className="text-red-500 text-[9px] font-semibold tracking-[0.18em] uppercase mt-0.5">
+                  &amp; RESTAURANT • {t('brand.location')}
+                </div>
+              </div>
+            </Link>
+
+            {/* Language pills */}
+            <div className="flex items-center border border-gray-700 rounded-lg overflow-hidden flex-shrink-0">
+              {langOptions.map(({ value, label }) => (
+                <button
+                  key={value}
+                  onClick={() => setLanguage(value)}
+                  className={`px-2.5 py-1.5 text-[11px] font-bold transition-colors whitespace-nowrap ${
+                    language === value ? 'bg-gray-700 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {/* Nav pill */}
+            <div className="flex-1 min-w-0 overflow-hidden" ref={desktopRef}>
+              <div
+                className="flex items-center bg-gray-900 border border-gray-700 rounded-full px-2 py-1 overflow-x-auto"
+                style={{ scrollbarWidth: 'none' }}
+              >
+                {navLinks.map((link) => (
+                  <div key={link.name} className="relative flex-shrink-0">
+                    {link.dropdown ? (
+                      <>
+                        <button
+                          onClick={() =>
+                            setDesktopDropdown(desktopDropdown === link.name ? null : link.name)
+                          }
+                          className={`flex items-center gap-0.5 font-semibold text-[13px] px-3 py-1.5 transition-colors whitespace-nowrap ${
+                            isActive(link.path) ? 'text-red-500' : 'text-white hover:text-red-500'
+                          }`}
+                        >
+                          {link.name}
+                          <svg className="w-3 h-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </button>
+                        {desktopDropdown === link.name && (
+                          <div className="absolute top-full left-0 mt-2 bg-gray-900 border border-gray-700 rounded-lg shadow-xl shadow-black/30 py-2 min-w-[180px] z-50">
+                            {link.dropdown.map((item) => (
+                              <Link
+                                key={item.name}
+                                to={item.path}
+                                className="block px-4 py-2.5 text-sm text-gray-300 hover:text-red-500 hover:bg-gray-800 transition-colors"
+                                onClick={() => setDesktopDropdown(null)}
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link
+                        to={link.path}
+                        className={`font-semibold text-[13px] px-3 py-1.5 transition-colors whitespace-nowrap block ${
+                          isActive(link.path) ? 'text-red-500' : 'text-white hover:text-red-500'
+                        }`}
+                      >
+                        {link.name}
+                      </Link>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
-          </Link>
 
-          {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-4 2xl:gap-6">
-            {navLinks.map((link) => (
-              <div key={link.name} className="relative group" ref={link.dropdown ? dropdownRef : undefined}>
-                {link.dropdown ? (
-                  <>
-                    <button
-                      onClick={() => toggleDropdown(link.name)}
-                      className={`flex items-center gap-1 font-medium text-sm py-2 transition-colors ${
-                        isActive(link.path) ? 'text-red-500' : 'text-white hover:text-red-500'
-                      }`}
-                    >
-                      {link.name}
-                      <svg className="w-3 h-3 mt-0.5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
-                    </button>
-                    {openDropdown === link.name && (
-                      <div className="absolute top-full left-0 mt-1 bg-gray-900 border border-gray-700 rounded-lg shadow-xl shadow-black/30 py-2 min-w-[180px] animate-slideInDown z-50">
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.name}
-                            to={item.path}
-                            className="block px-4 py-2.5 text-sm text-gray-300 hover:text-red-500 hover:bg-gray-800 transition-colors"
-                            onClick={() => setOpenDropdown(null)}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <Link
-                    to={link.path}
-                    className={`font-medium text-sm py-2 transition-colors ${
-                      isActive(link.path) ? 'text-red-500' : 'text-white hover:text-red-500'
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {/* Right Actions */}
-          <div className="hidden md:flex items-center gap-3">
-            <LanguageSwitcher />
-            <a
-              href="tel:+251911234567"
-              className="text-gray-300 hover:text-red-500 text-sm transition-colors hidden xl:block"
-            >
-              +251 911 234 567
-            </a>
+            {/* CTA */}
             <Link
               to="/reservation"
-              className="bg-red-600 hover:bg-red-700 text-white px-5 lg:px-6 py-2 lg:py-2.5 rounded-lg font-bold text-sm transition-all duration-200 transform hover:scale-105 active:scale-95 shadow-lg shadow-red-600/25"
+              className="flex-shrink-0 bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded-full font-bold text-[13px] tracking-wide transition-all duration-200 hover:scale-105 active:scale-95 shadow-lg shadow-red-600/30 whitespace-nowrap"
             >
               {t('nav.findTable')}
             </Link>
           </div>
+        </div>
+      </div>
 
-          {/* Mobile Hamburger */}
-          <div className="xl:hidden">
+      {/* ── MOBILE (below md) ── */}
+      <div className="md:hidden">
+        <div className="px-3">
+          <div className="flex items-center h-14 gap-2">
+
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0 group flex items-center gap-2">
+              <div className="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center shadow-md shadow-red-600/40 group-hover:bg-red-700 transition-colors">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" className="w-4 h-4">
+                  <path d="M5 9.5C5 6.5 8 4 12 4s7 2.5 7 5.5H5Z" />
+                  <path d="M5 9.5h14" />
+                  <path d="M7 12h10" />
+                  <path d="M4.5 15h15" />
+                  <path d="M6 18h12a2 2 0 0 0 2-2v-1H4v1a2 2 0 0 0 2 2Z" />
+                </svg>
+              </div>
+              <div className="leading-none">
+                <div className="text-white font-bold italic text-sm tracking-wide lowercase">{t('brand.name')}</div>
+                <div className="text-red-500 text-[8px] font-semibold tracking-[0.15em] uppercase mt-0.5">&amp; RESTAURANT</div>
+              </div>
+            </Link>
+
+            <div className="flex-1" />
+
+            {/* Lang pills */}
+            <div className="flex items-center border border-gray-700 rounded-lg overflow-hidden flex-shrink-0">
+              {langOptions.map(({ value, label }) => (
+                <button
+                  key={value}
+                  onClick={() => setLanguage(value)}
+                  className={`px-2 py-1 text-[10px] font-bold transition-colors whitespace-nowrap ${
+                    language === value ? 'bg-gray-700 text-white' : 'text-gray-400 hover:text-white hover:bg-gray-800'
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <Link
+              to="/reservation"
+              className="bg-red-600 hover:bg-red-700 text-white px-3 py-1.5 rounded-full font-bold text-[11px] whitespace-nowrap"
+            >
+              {t('nav.findTable')}
+            </Link>
+
+            {/* Hamburger */}
             <button
-              onClick={() => setIsMobileOpen(!isMobileOpen)}
-              className="text-white hover:text-red-500 text-2xl p-2 transition-colors"
+              onClick={() => {
+                setIsMobileOpen(!isMobileOpen);
+                setMobileDropdown(null);
+              }}
+              className="text-white hover:text-red-500 p-1.5 transition-colors"
               aria-label={t('nav.toggle')}
             >
               {isMobileOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
               )}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Menu */}
-      <div
-        className={`xl:hidden fixed inset-x-0 top-16 md:top-20 bg-gray-950 border-b border-gray-800 transition-all duration-300 ease-in-out ${
-          isMobileOpen
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 -translate-y-4 pointer-events-none'
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 space-y-1">
-          {navLinks.map((link) => (
-            <div key={link.name}>
-              {link.dropdown ? (
-                <>
-                  <button
-                    onClick={() => toggleDropdown(link.name)}
-                    className="flex items-center justify-between w-full text-white hover:text-red-500 font-medium text-sm py-3 px-2 transition-colors"
-                  >
-                    {link.name}
-                    <svg className={`w-3 h-3 transition-transform duration-200 ${openDropdown === link.name ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {openDropdown === link.name && (
-                    <div className="pl-4 space-y-1 pb-2">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.path}
-                          className="block text-gray-400 hover:text-red-500 text-sm py-2 px-2 transition-colors"
-                          onClick={() => setIsMobileOpen(false)}
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </>
-              ) : (
-                <Link
-                  to={link.path}
-                  className="block text-white hover:text-red-500 font-medium text-sm py-3 px-2 transition-colors"
-                  onClick={() => setIsMobileOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              )}
-            </div>
-          ))}
-          <div className="pt-4 pb-2 space-y-3">
-            <LanguageSwitcher mobile />
-            <a href="tel:+251911234567" className="block text-gray-300 text-sm text-center">
-              +251 911 234 567
-            </a>
-            <Link
-              to="/reservation"
-              className="block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-bold text-sm text-center transition-all duration-200"
-              onClick={() => setIsMobileOpen(false)}
+        {/* Mobile nav dropdown panel */}
+        <div
+          className={`border-t border-gray-800 bg-gray-950 transition-all duration-300 ease-in-out overflow-hidden ${
+            isMobileOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
+          }`}
+        >
+          <div className="px-3 py-3" ref={mobileRef}>
+            {/* Horizontal scrollable pill */}
+            <div
+              className="flex items-center bg-gray-900 border border-gray-700 rounded-full px-2 py-1 overflow-x-auto"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
-              {t('nav.findTable')}
-            </Link>
+              {navLinks.map((link) => (
+                <div key={link.name} className="relative flex-shrink-0">
+                  {link.dropdown ? (
+                    <button
+                      onClick={() =>
+                        setMobileDropdown(mobileDropdown === link.name ? null : link.name)
+                      }
+                      className={`flex items-center gap-0.5 font-semibold text-[12px] px-3 py-1.5 transition-colors whitespace-nowrap ${
+                        isActive(link.path) ? 'text-red-500' : 'text-white hover:text-red-500'
+                      }`}
+                    >
+                      {link.name}
+                      <svg
+                        className={`w-3 h-3 mt-0.5 flex-shrink-0 transition-transform duration-200 ${
+                          mobileDropdown === link.name ? 'rotate-180' : ''
+                        }`}
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </button>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className={`font-semibold text-[12px] px-3 py-1.5 transition-colors whitespace-nowrap block ${
+                        isActive(link.path) ? 'text-red-500' : 'text-white hover:text-red-500'
+                      }`}
+                      onClick={() => setIsMobileOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Dropdown sub-items rendered below the pill */}
+            {mobileDropdown && (
+              <div className="mt-2 bg-gray-900 border border-gray-700 rounded-lg py-2">
+                {navLinks
+                  .find((l) => l.name === mobileDropdown)
+                  ?.dropdown?.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      className="block px-4 py-2.5 text-sm text-gray-300 hover:text-red-500 hover:bg-gray-800 transition-colors"
+                      onClick={() => { setMobileDropdown(null); setIsMobileOpen(false); }}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

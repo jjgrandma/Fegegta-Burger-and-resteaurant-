@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import ScrollReveal from '../components/ScrollReveal';
 import { useLanguage } from '../i18n/LanguageContext';
+
 import boomImg from '../public/assets/boom.jpg';
 
 interface MenuItem {

@@ -156,7 +156,7 @@ const translations: Record<Language, Record<string, string>> = {
     'reviews.fiveStar': '5-Star Reviews',
     'reviews.recommend': 'Recommend',
     'reviews.helpful': 'Helpful',
-    'common.adamaAddress': 'Adama, Oromia, Ethiopia',
+    'common.adamaAddress': 'G7WC+GJG, Adama, Oromia, Ethiopia',
   },
   am: {
     'brand.name': 'ፈገግታ በርገር',
@@ -183,7 +183,7 @@ const translations: Record<Language, Record<string, string>> = {
     'chefs.kicker': 'ቡድናችን', 'chefs.title': 'ባለሙያ ሼፎቻችን', 'chefs.view': 'መገለጫ ይመልከቱ', 'chefs.awards': 'ሽልማቶች እና እውቅና', 'chefs.follow': 'ይከተሉ',
     'blog.kicker': 'ታሪኮቻችን', 'blog.title': 'አዳዲስ የብሎግ ጽሑፎች', 'blog.all': 'ሁሉም', 'blog.read': 'ተጨማሪ ያንብቡ', 'blog.search': 'ጽሑፍ ይፈልጉ', 'blog.recent': 'አዳዲስ ጽሑፎች', 'blog.categories': 'ምድቦች', 'blog.noPosts': 'ምንም ጽሑፍ አልተገኘም', 'blog.detailKicker': 'የብሎግ ዝርዝር', 'blog.detailTitle': 'የብሎግ ዝርዝር', 'blog.share': 'ያጋሩ', 'blog.back': 'ወደ ብሎግ ተመለስ',
     'reviews.kicker': 'የደንበኞች ምስክርነት', 'reviews.title': 'የደንበኞች አስተያየቶች', 'reviews.total': 'ጠቅላላ አስተያየቶች', 'reviews.average': 'አማካይ ደረጃ', 'reviews.fiveStar': '5 ኮከብ አስተያየቶች', 'reviews.recommend': 'ይመክራሉ', 'reviews.helpful': 'ጠቃሚ',
-    'common.adamaAddress': 'አዳማ፣ ኦሮሚያ፣ ኢትዮጵያ',
+    'common.adamaAddress': 'G7WC+GJG, አዳማ፣ ኦሮሚያ፣ ኢትዮጵያ',
   },
   om: {
     'brand.name': 'FEGEGTA BURGER', 'brand.location': 'ADAAMAA, ITOOPHIYAA',
@@ -204,7 +204,7 @@ const translations: Record<Language, Record<string, string>> = {
     'chefs.kicker': 'Garee Keenya', 'chefs.title': 'BILCHEESSITOOTA KEENYA', 'chefs.view': 'Odeeffannoo Ilaali', 'chefs.awards': 'Badhaasa fi Beekamtii', 'chefs.follow': 'Hordofaa',
     'blog.kicker': 'Seenaa Keenya', 'blog.title': 'BARREEFFAMOOTA HAARAA', 'blog.all': 'Hunda', 'blog.read': 'DABALATA DUBBISAA', 'blog.search': 'Barreeffama Barbaadaa', 'blog.recent': 'Barreeffamoota Haaraa', 'blog.categories': 'Ramaddiiwwan', 'blog.noPosts': 'Barreeffamni hin argamne', 'blog.detailKicker': 'Bal\'ina Oduu', 'blog.detailTitle': 'BAL\'INA ODUU', 'blog.share': 'Qoodaa', 'blog.back': 'GARA ODUUTTI DEEBI\'AA',
     'reviews.kicker': 'Ragaa Maamiltootaa', 'reviews.title': 'YAADA MAAMILTOOTAA', 'reviews.total': 'Yaada Waliigalaa', 'reviews.average': 'Sadarkaa Giddugaleessaa', 'reviews.fiveStar': 'Yaada Urjii 5', 'reviews.recommend': 'Ni Gorsu', 'reviews.helpful': 'Gargaaraa',
-    'common.adamaAddress': 'Adaamaa, Oromiyaa, Itoophiyaa',
+    'common.adamaAddress': 'G7WC+GJG, Adaamaa, Oromiyaa, Itoophiyaa',
   },
 };
 

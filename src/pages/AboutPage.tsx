@@ -2,9 +2,9 @@ import ScrollReveal from '../components/ScrollReveal';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const teamMembers = [
-  { name: 'William Joe', role: 'Master Chef', image: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=400&q=80' },
-  { name: 'Sarah Mitchell', role: 'Head Chef', image: 'https://images.unsplash.com/photo-1595273670150-bd0c3c392e46?w=400&q=80' },
-  { name: 'Marco Rossi', role: 'Sous Chef', image: 'https://images.unsplash.com/photo-1583394293214-28ded15ee548?w=400&q=80' },
+  { name: 'Yohannes Alemu', role: 'Master Chef', image: 'https://images.unsplash.com/photo-1566753323558-f4e0952af115?w=400&q=80' },
+  { name: 'Selam Tesfaye', role: 'Pastry Chef', image: 'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=400&q=80' },
+  { name: 'Biruk Mengistu', role: 'Sous Chef', image: 'https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=400&q=80' },
 ];
 
 const galleryImages = [
@@ -36,12 +36,26 @@ export default function AboutPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           <ScrollReveal>
-            <div className="relative overflow-hidden rounded-2xl border-4 border-gray-800 shadow-xl shadow-black/20">
-              <img
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80"
-                alt="Our restaurant story"
-                className="w-full h-80 md:h-96 object-cover hover:scale-110 transition-transform duration-700"
-              />
+            {/* ── Video Player ── */}
+            <div className="relative rounded-2xl border-4 border-gray-800 shadow-xl shadow-black/20 overflow-hidden bg-black">
+              <video
+                className="w-full object-cover"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                style={{ maxHeight: '480px' }}
+              >
+                <source src="/src/public/assets/our-story.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+
+              {/* Red accent corners */}
+              <div className="absolute top-0 left-0 w-6 h-6 border-t-4 border-l-4 border-red-500 rounded-tl-lg pointer-events-none" />
+              <div className="absolute top-0 right-0 w-6 h-6 border-t-4 border-r-4 border-red-500 rounded-tr-lg pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-6 h-6 border-b-4 border-l-4 border-red-500 rounded-bl-lg pointer-events-none" />
+              <div className="absolute bottom-0 right-0 w-6 h-6 border-b-4 border-r-4 border-red-500 rounded-br-lg pointer-events-none" />
             </div>
           </ScrollReveal>
           <ScrollReveal delay={200}>
