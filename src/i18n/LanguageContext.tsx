@@ -4,7 +4,7 @@ export type Language = 'en' | 'am' | 'om';
 
 const translations: Record<Language, Record<string, string>> = {
   en: {
-    'brand.name': 'YO Burger',
+    'brand.name': 'Fegegta Burger and Restaurant',
     'brand.location': 'ADAMA, ETHIOPIA',
     'nav.home': 'HOME',
     'nav.menus': 'MENUS',
@@ -159,7 +159,7 @@ const translations: Record<Language, Record<string, string>> = {
     'common.adamaAddress': 'G7WC+GJG, Adama, Oromia, Ethiopia',
   },
   am: {
-    'brand.name': 'YO በርገር',
+    'brand.name': 'ፈጌጣ በርገር እና ሬስቶራንት',
     'brand.location': 'አዳማ፣ ኢትዮጵያ',
     'nav.home': 'መነሻ', 'nav.menus': 'ምናሌ', 'nav.about': 'ስለ እኛ', 'nav.chefs': 'ሼፎቻችን', 'nav.blog': 'ብሎግ', 'nav.pages': 'ገጾች', 'nav.contact': 'ያግኙን',
     'nav.latest': 'አዳዲስ ጽሑፎች', 'nav.blogDetails': 'የብሎግ ዝርዝር', 'nav.reservation': 'ቦታ ማስያዝ', 'nav.reviews': 'አስተያየቶች', 'nav.findTable': 'ጠረጴዛ ያስይዙ', 'nav.toggle': 'ምናሌ ክፈት',
@@ -186,7 +186,7 @@ const translations: Record<Language, Record<string, string>> = {
     'common.adamaAddress': 'G7WC+GJG, አዳማ፣ ኦሮሚያ፣ ኢትዮጵያ',
   },
   om: {
-    'brand.name': 'YO Burger', 'brand.location': 'ADAAMAA, ITOOPHIYAA',
+    'brand.name': 'Fegegta Burger and Restaurant', 'brand.location': 'ADAAMAA, ITOOPHIYAA',
     'nav.home': 'FUULA DURAA', 'nav.menus': 'NYAATA', 'nav.about': 'WAA\'EE KEENYA', 'nav.chefs': 'BILCHEESSITOOTA', 'nav.blog': 'ODUU', 'nav.pages': 'FUULOTA', 'nav.contact': 'NU QUNNAMAA', 'nav.latest': 'BARREEFFAMOOTA HAARAA', 'nav.blogDetails': 'BAL\'INA ODUU', 'nav.reservation': 'BAKKA QABADHAA', 'nav.reviews': 'YAADA MAAMILTOOTAA', 'nav.findTable': 'MINJAALA QABADHAA', 'nav.toggle': 'Baafata bani',
     'category.starters': 'NYAATA JALQABAA', 'category.burgers': 'BURGERII', 'category.special': 'ADDAA', 'category.desserts': 'MI\'AAWAA', 'category.breakfast': 'CIREE', 'category.lunch': 'LAQANA', 'category.dinner': 'IRBAATA', 'category.drinks': 'DHUGAATII',
     'hero.welcome': 'Baga gara YO Burger dhuftan', 'hero.premium': 'Mi\'a Jaallatamaa Adaamaa', 'hero.crafted': 'Guyyaa Guyyaan Haaraa Qophaa\'a', 'hero.title1': 'BURGERII FI GRILL', 'hero.highlight1': 'MANA NYAATAA', 'hero.title2': 'MI\'A ITOOPHIYAA', 'hero.highlight2': 'JABAA', 'hero.title3': 'HAARAA. HO\'AA.', 'hero.highlight3': 'HIN IRRAANFATAMU.',

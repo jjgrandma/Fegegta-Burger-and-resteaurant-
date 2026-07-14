@@ -112,7 +112,7 @@ export default function Navbar() {
               <div className="leading-none">
                 <div className="text-white font-bold italic text-lg md:text-xl tracking-wide lowercase">{t('brand.name')}</div>
                 <div className="text-red-500 text-[9px] font-semibold tracking-[0.18em] uppercase mt-0.5">
-                  &amp; RESTAURANT • {t('brand.location')}
+                  {t('brand.location')}
                 </div>
               </div>
             </Link>
@@ -214,7 +214,7 @@ export default function Navbar() {
               </div>
               <div className="leading-none">
                 <div className="text-white font-bold italic text-sm tracking-wide lowercase">{t('brand.name')}</div>
-                <div className="text-red-500 text-[8px] font-semibold tracking-[0.15em] uppercase mt-0.5">&amp; RESTAURANT</div>
+                <div className="text-red-500 text-[8px] font-semibold tracking-[0.15em] uppercase mt-0.5">{t('brand.location')}</div>
               </div>
             </Link>
 
